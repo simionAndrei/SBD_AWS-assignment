@@ -9,8 +9,8 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 
 1.  [Introduction](#introduction)
 2.  [Solution details](#solution-details)
-3.  [Running parameters configuration](#running-parameters-configuration)
-4.  [Initial tests](#initial-tests)
+3.  [Initial tests](#initial-tests)
+4.  [Running parameters configuration](#running-parameters-configuration)
 5.  [Final tests](#final-tests)
 
 
