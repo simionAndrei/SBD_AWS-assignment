@@ -16,9 +16,9 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 
 # Introduction
 
-![Test image](figures/run1_1.png)
+![Test image](figures/web_conn.png)
 
-***Figure 1*** - Test image
+***Figure 1*** - Web Interfaces used to monitor our application from AWS cluster: Ganglia (up), Spark History Server (left), Resource Manager (right)
 
 # Solution details
 
