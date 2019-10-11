@@ -1,0 +1,1 @@
+spark-submit --deploy-mode cluster --deploy-mode cluster --class DataSetWindow --master yarn --deploy-mode cluster --driver-memory 8G --executor-memory 16G --num-executors 1 --executor-cores 34 s3://group44-folder/full-2/spark-scala-application-template_2.11-1.0.jar
