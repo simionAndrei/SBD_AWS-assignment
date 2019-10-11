@@ -14,8 +14,6 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 5.  [Final tests](#final-tests)
 
 
-
-
 # Introduction
 
 ![Test image](figures/run1_1.png)
@@ -32,6 +30,30 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 
 ## DataSetWindow2
 
+# Initial tests
+
+10 m4.large: 4vCore and 8GB
+
+| Running ID | Data interval | Input size | Shuffle size | Time     |
+|------------|---------------|------------|--------------|----------|
+| 1          | 10 days       | ~25GB      | ~340MB       | 119.72s  |
+| 2          | 1 month       | ~74GB      | ~999MB       | 264.13s  |
+| 3          | 1 year        | ~1.2TB     | ~16GB        | 3680.12s |
+
+***Table 1*** - Running results on 10m4.large (4vCore, 8GB) AWS instances
+
+
+| Running ID | Data interval | Input size | Shuffle size | Time     |
+|------------|---------------|------------|--------------|----------|
+| 1          | 1 month       | ~74GB      | ~999MB<sup>1</sup>      | 156.78s  |
+| 2          | 3 months      | ~214GB     | ~2.8GB<sup>2</sup>     | 417.66s  |
+| 3          | 1 year        | ~1.2TB     | ~16GB        | 1815.83s |
+
+<sup>1</sup> 822.5MB when KryoSerializer enabled  
+<sup>2</sup> 2.3GB when KryoSerializer enabled    
+***Table 2*** - Running results on 10m4.xlarge (8vCore, 16GB) AWS instances
+
+
 
 # Running parameters configuration
 
@@ -40,8 +62,6 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 ## KryoSerializer
 
 ## offHeap enabled
-
-# Initial tests
 
 
 # Final tests
