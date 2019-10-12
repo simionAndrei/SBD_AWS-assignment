@@ -32,7 +32,7 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 
 # Initial tests
 
-10 m4.large: 4vCore and 8GB
+
 
 | Running ID | Data interval | Input size | Shuffle size | Time     |
 |------------|---------------|------------|--------------|----------|
@@ -49,9 +49,10 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 | 2          | 3 months      | ~214GB     | ~2.8GB<sup>2</sup>     | 417.66s  |
 | 3          | 1 year        | ~1.2TB     | ~16GB        | 1815.83s |
 
+***Table 2*** - Running results on 10m4.xlarge (8vCore, 16GB) AWS instances  
 <sup>1</sup> 822.5MB when KryoSerializer enabled  
 <sup>2</sup> 2.3GB when KryoSerializer enabled    
-***Table 2*** - Running results on 10m4.xlarge (8vCore, 16GB) AWS instances
+
 
 
 
