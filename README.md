@@ -63,7 +63,7 @@ Filter out the empty `allNames` using an if in the `flatMap` previously mentione
 `groupBy` the `date` and `topicName` and `count`.
 Use the `Window` class to partition the results and count the top 10.
 
-## DataSetWindoeFast
+## DataSetWindowFast
 
 TODO Mihai
 
