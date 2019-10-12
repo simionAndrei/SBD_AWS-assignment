@@ -34,7 +34,7 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 
 # Solution details
 All our solutions use a `flatMap` to get the required format from the input. Each subsection describes what happens
-after that.
+after the `flatMap` operation.
 
 ## RDD Implementation
 Group by the day, this will bring all the data locally to an executor, making it possible to process afterwards.
@@ -42,32 +42,32 @@ Group by the day, this will bring all the data locally to an executor, making it
 
 ***Figure 2*** - RDD DAG Visualization
 
-### RDD
+### RDD class
 Use scala lambdas afterwards to get the required results. 
 
-### RDDFast
-Use a `mutable.HashMap` to calculate the counts and a `mutable.PriorityQueue` along with a minimum value to
-get the top 10 results.
+### RDDFast class
+Use a `mutable.HashMap` to calculate the counts and a `mutable.PriorityQueue` while storing the minimum value (in order to avoid push-pop operations) to get the top 10 results.
 
 ## Dataset Implementation
-Filtering, grouping and counting the desired format use the `Window` class to partition the results and count the top 10.
+We perform filtering, grouping and counting. Afterwards we use the `Window` class to partition the results and count the top 10.
+
 ![Dataset-DAG](figures/dataset.png)
 
 ***Figure 3*** - Dataset DAG Visualization
 
-### DataSetWindow
+### DataSetWindow class
 Filter out the empty `allNames` using the `filter` spark feature before doing the `flatMap`.
 Use a `Timestamp` to store the date.
 `groupBy` the `date` and `topicName` and `count`.
 
-### DataSetWindow2
+### DataSetWindow2 class
 Filter out the empty `allNames` using the `filter` spark feature before doing the `flatMap`.
-Use a `Int` to store the date.
+Use an `Int` to store the date.
 `groupBy` the `date` and `topicName` and `count`.
 
-### DataSetWindowFast
-Filter out the empty `allNames` using an if in the `flatMap` previously mentioned.
-Use a `Int` to store the date.
+### DataSetWindowFast class
+Filter out the empty `allNames` using an `if` in the `flatMap` previously mentioned.
+Use an `Int` to store the date.
 `groupBy` the `date` and `topicName` and `count`.
 
 # Initial tests
