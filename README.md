@@ -32,14 +32,27 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 ***Figure 1*** - Web Interfaces used to monitor our application from AWS cluster: Ganglia (up), Spark History Server (left), Resource Manager (right)
 
 # Solution details
+All our solutions use a `flatMap` to get the required format from the input. Each subsection describes what happens
+after that.
 
 ## RDD
+Group by the day, this will bring all the data locally to an executor, making it possible to process afterwards.
+Use scala lambdas afterwards to get the required results. 
 
 ## RDDFast
+Group by the day, this will bring all the data locally to an executor, making it possible to process afterwards.
+Use a `mutable.HashMap` to calculate the counts and a `mutable.PriorityQueue` along with a minimum value to
+get the top 10 results.
 
 ## DataSetWindow
+Filter out the empty `allNames` using the `filter` spark feature before doing the `flatMap`.
+`groupBy` the `date` and `topicName` and `count`.
+Use the `Window` class to partition the results and count the top 10.
 
 ## DataSetWindow2
+Filter out the empty `allNames` using an if in the `flatMap` previously mentioned.
+`groupBy` the `date` and `topicName` and `count`.
+Use the `Window` class to partition the results and count the top 10.
 
 # Initial tests
 
