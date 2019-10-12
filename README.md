@@ -14,7 +14,8 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
   * [DataSetWindow](#datasetwindow)
   * [DataSetWindow2](#datasetwindow2)
 3.  [Initial tests](#initial-tests)
-  * [Small 10 machines cluster (AWS m4.large)](#small-10-machines-cluster-(AWS-m4.large))
+  * [Small 10 machines cluster](#small-10-machines-cluster)
+  * [Medium 10 machines cluster](#medium-10-machines-cluster)
 4.  [Running parameters configuration](#running-parameters-configuration)
 5.  [Final tests](#final-tests)
 
@@ -38,7 +39,7 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 # Initial tests
 
 
-## Small 10 machines cluster (AWS m4.large)
+## Small 10 machines cluster
 
 | Running ID | Data interval | Input size | Shuffle size | Time     |
 |------------|---------------|------------|--------------|----------|
@@ -49,7 +50,7 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 ***Table 1*** - Running results on 10m4.large (4vCore, 8GB) AWS instances
 
 
-## Medium 10 machines cluster (AWS m4.xlarge)
+## Medium 10 machines cluster
 
 | Running ID | Data interval | Input size | Shuffle size | Time     |
 |------------|---------------|------------|--------------|----------|
