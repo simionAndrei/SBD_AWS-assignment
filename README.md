@@ -126,7 +126,7 @@ Also it is very important to leave 1-2 free cores for the rest of the running pr
 ## Memory
 You can increase/decrease the memory executors have using `driver-memory` and `executor-memory`.
 According to an [Amazon blog post](https://aws.amazon.com/blogs/big-data/best-practices-for-successfully-managing-memory-for-apache-spark-applications-on-amazon-emr/)
-it is recommended to set them both to the same value, but all the executors' memory must all fit inside a nodes memory so
+it is recommended to set them both to the same value, but all the executors' memory must all fit inside a node's memory so
 `num_executor * executor_memory < node_memory`. We should also consider that there are more processes running on the
 nodes, so leave some out for them.  
 
