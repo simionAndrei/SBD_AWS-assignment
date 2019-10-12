@@ -135,9 +135,9 @@ nodes, so leave some out for them.
 This has a big overhead, so we used the [Kryo Serializer](https://github.com/EsotericSoftware/kryo) which allows better throughput.
 
 ## offHeap enabled
-Because the offHeap memory does not follow the standard Java representation it consumes less memory and is not
-under the GC it provides lower overhead.
-
+Because using the Java heap memory comes with drawbacks(garbage collector-GC and Object metadata overhead) we used the
+offHeap options which stores the objects in a memory zone handled exclusively by the Spark MemoryManager. This allows us
+to consume more memory and save time on GC cycles.
 
 # Final tests
 
