@@ -71,15 +71,14 @@ Use an `Int` to store the date.
 `groupBy` the `date` and `topicName` and `count`.
 
 # Initial tests
-Initially we wanted to see if our application scales. We have determined that as long as the servers do not
-run into memory problems they scale linearly with the resources. On thing to note is that on each core, a fixed
-number of resources(core and memory) has to be allocated in order for the cluster to run(eg YARN). This makes powerful
+Initially we wanted to see if our application scale with the number of available cores. We have determined that as long as the servers do not
+run into memory problems, our application scale linearly with the resources. One thing to note is that on each core, a fixed
+number of resources(core and memory) has to be allocated in order for the cluster to run (eg YARN). This makes powerful
 machines more efficient, then the equivalent of more but smaller ones.
 
-We have also determined, by looking in the shuffle size, that the Kyro serialization decreases the overhead.
-On the small tests the offheap and Kyro serialization settings seem to have negligible impact on speed.
+We have also determined, by looking at the shuffle size, that the Kyro serialization decreases the overhead (smaller shuffle size when Kiro Serializer is enabled). Moreover, on the small tests the offHeap and Kyro serialization settings seem to have negligible impact on speed.
 
-All tests performed on the small clusters were performed using the `RDD` implementation.
+All tests performed on the small and medium clusters were conducted using the `RDD` class implementation.
 
 
 ## Small 10 machines cluster
