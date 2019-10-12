@@ -27,7 +27,7 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 
 # Introduction
 
-![Test image](figures/web_conn.png)
+![Web_interfaces](figures/web_conn.png)
 
 ***Figure 1*** - Web Interfaces used to monitor our application from AWS cluster: Ganglia (up), Spark History Server (left), Resource Manager (right)
 
@@ -39,6 +39,10 @@ after that.
 Group by the day, this will bring all the data locally to an executor, making it possible to process afterwards.
 Use scala lambdas afterwards to get the required results. 
 
+![RDD-DAG](figures/rdd.png)
+
+***Figure 2*** - RDD DAG Visualization
+
 ## RDDFast
 Group by the day, this will bring all the data locally to an executor, making it possible to process afterwards.
 Use a `mutable.HashMap` to calculate the counts and a `mutable.PriorityQueue` along with a minimum value to
@@ -48,6 +52,10 @@ get the top 10 results.
 Filter out the empty `allNames` using the `filter` spark feature before doing the `flatMap`.
 `groupBy` the `date` and `topicName` and `count`.
 Use the `Window` class to partition the results and count the top 10.
+
+![Dataset-DAG](figures/dataset.png)
+
+***Figure 2*** - Dataset DAG Visualization
 
 ## DataSetWindow2
 Filter out the empty `allNames` using an if in the `flatMap` previously mentioned.
