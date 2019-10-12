@@ -53,7 +53,7 @@ get the top 10 results.
 Filtering, grouping and counting the desired format use the `Window` class to partition the results and count the top 10.
 ![Dataset-DAG](figures/dataset.png)
 
-***Figure 2*** - Dataset DAG Visualization
+***Figure 3*** - Dataset DAG Visualization
 
 ### DataSetWindow
 Filter out the empty `allNames` using the `filter` spark feature before doing the `flatMap`.
@@ -149,6 +149,8 @@ under the GC it provides lower overhead.
 | 10         | **DatasetWindowFast** with 2 executors per node, 17 cores and 16GB memory per executor, KryoSerializer and offHeap of 16GB   | 372.11s |
 | 11         | **DatasetWindowFast** with 3 executors per node, 11 cores and 12GB memory per executor, KryoSerializer and offHeap of 16GB   | 355.56s |
 | 12         | **DatasetWindowFast** with 5 executors per node, 7 cores and 8GB memory per executor, KryoSerializer and offHeap of 16GB     | 341.14s |
+
+***Table 3*** - Running results on 20c4.8xlarge (36vCore, 60GB) AWS instances  
 
 # Conclusion
 In conclusion the fastest way to solve this problem is by using a DataSet implementation, taking advantage of the features
