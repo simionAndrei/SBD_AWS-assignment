@@ -51,6 +51,7 @@ get the top 10 results.
 
 ## DataSetWindow
 Filter out the empty `allNames` using the `filter` spark feature before doing the `flatMap`.
+Use a `Timestamp` to store the date.
 `groupBy` the `date` and `topicName` and `count`.
 Use the `Window` class to partition the results and count the top 10.
 
@@ -59,7 +60,14 @@ Use the `Window` class to partition the results and count the top 10.
 ***Figure 2*** - Dataset DAG Visualization
 
 ## DataSetWindow2
+Filter out the empty `allNames` using the `filter` spark feature before doing the `flatMap`.
+Use a `Int` to store the date.
+`groupBy` the `date` and `topicName` and `count`.
+Use the `Window` class to partition the results and count the top 10.
+
+## DataSetWindowFast
 Filter out the empty `allNames` using an if in the `flatMap` previously mentioned.
+Use a `Int` to store the date.
 `groupBy` the `date` and `topicName` and `count`.
 Use the `Window` class to partition the results and count the top 10.
 
@@ -99,17 +107,22 @@ TODO Mihai
 # Running parameters configuration
 
 ## Number of executors and memory
+According to [this blog post](https://spoddutur.github.io/spark-notes/distribution_of_executors_cores_and_memory_for_spark_application.html),
+the HDFS has problems handling more then 5 tasks per executor.
 
 ## Kryo Serializer
+[Spark uses by default the standard Java serializer](#https://spark.apache.org/docs/latest/tuning.html#data-serialization).
+This has a big overhead, so we used the Kyro Serializer which allows better throughput.
 
 ## offHeap enabled
+Because the offHeap memory does not follow the standard Java representation it consumes less memory and is not
+under the GC it provides lower overhead.
 
 
 # Final tests
 
 ## Running with default configurations
-
-TODO Error out of memory
+Unfortunately with defaults we were running out of memory and the cluster was crashing.
 
 
 ## Running with custom configurations
