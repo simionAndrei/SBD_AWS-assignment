@@ -13,6 +13,7 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
   * [RDDFast](#rddfast)
   * [DataSetWindow](#datasetwindow)
   * [DataSetWindow2](#datasetwindow2)
+  * [DataSetWindowFast](#datasetwindowfast)
 3.  [Initial tests](#initial-tests)
   * [Small 10 machines cluster](#small-10-machines-cluster)
   * [Medium 10 machines cluster](#medium-10-machines-cluster)
@@ -61,6 +62,10 @@ Use the `Window` class to partition the results and count the top 10.
 Filter out the empty `allNames` using an if in the `flatMap` previously mentioned.
 `groupBy` the `date` and `topicName` and `count`.
 Use the `Window` class to partition the results and count the top 10.
+
+## DataSetWindoeFast
+
+TODO Mihai
 
 # Initial tests
 
