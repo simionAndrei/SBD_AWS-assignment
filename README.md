@@ -106,9 +106,12 @@ only using 1 vCPU per slave.
 # Running parameters configuration
 
 ## Number of executors
-Tunning the n
-According to [this blog post](https://spoddutur.github.io/spark-notes/distribution_of_executors_cores_and_memory_for_spark_application.html),
-the HDFS has problems handling more then 5 tasks per executor.
+Tuning the right number of executors is tricky. According to [this blog post](https://spoddutur.github.io/spark-notes/distribution_of_executors_cores_and_memory_for_spark_application.html),
+the HDFS has problems handling more then 5 tasks per executor. This mean that a Fat executor(1 executor with all the
+cores per node) setup will hurt the HDFS throughput. The Slim executor setup(1 core per executor and nodes have
+num_cores executors) is not much better, as we can not take advantage of running multiple tasks on the same JVM.
+This will also result in memory overhead as the potentially shared variables need to be replicated on each JVM.
+We have also experimentally determined these claims. 
 
 ## Memory
 You can increase/decrease the memory executors have using `driver-memory` and `executor-memory`.
