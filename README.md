@@ -154,15 +154,15 @@ under the GC it provides lower overhead.
 
 ![Spark-hist](figures/final_run_sparkh.png)
 
-***Figure 4*** - Spark History Server for running ID 12 from **Table 2**
+***Figure 4*** - Spark History Server for running ID 12 from _Table 2_
 
 ![Resource-man](figures/final_run_time.png)
 
-***Figure 5*** -Application output for running ID 12 from **Table 2**
+***Figure 5*** -Application output for running ID 12 from _Table 2_
 
 ![Ganglia](figures/final_run_ganglia.png)
 
-***Figure 5*** - Ganglia for the final running tests
+***Figure 6*** - Ganglia for the final running tests
 
 
 # Conclusion
