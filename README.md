@@ -111,7 +111,7 @@ memory error (`java.lang.OutOfMemoryError: Java heap space`) and the cluster cra
 was too small and could not fit all the desired objects in it. Also, as far as we can tell, our spark server was not using YARN resource manager.
 
 
-# Running parameters configuration
+# Running with customized configurations
 
 ## Number of executors
 Tuning the right number of executors is tricky. According to [this blog post](https://spoddutur.github.io/spark-notes/distribution_of_executors_cores_and_memory_for_spark_application.html),
