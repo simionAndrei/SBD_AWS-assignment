@@ -106,9 +106,8 @@ All tests performed on the small and medium clusters were conducted using the `R
 
 
 # Running with default configurations
-Unfortunately when running on the full data with `spark-submit` default configuration, we were encountered with out of memory (`java.lang.OutOfMemoryError: Java heap space`) and the cluster was crashing.
-As far as we can tell, we were not even using the YARN. In the interface it was registering that we were
-only using 1 vCPU per slave.
+Unfortunately when running on the full data with `spark-submit` default configuration, we were encountered with out of memory error (`java.lang.OutOfMemoryError: Java heap space`) and the cluster was crashing.
+As far as we can tell, we were not even using the YARN.
 
 
 # Running parameters configuration
