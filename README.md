@@ -36,44 +36,39 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 All our solutions use a `flatMap` to get the required format from the input. Each subsection describes what happens
 after that.
 
-## RDD
+## RDD Implementation
 Group by the day, this will bring all the data locally to an executor, making it possible to process afterwards.
-Use scala lambdas afterwards to get the required results. 
-
 ![RDD-DAG](figures/rdd.png)
 
 ***Figure 2*** - RDD DAG Visualization
 
-## RDDFast
-Group by the day, this will bring all the data locally to an executor, making it possible to process afterwards.
+### RDD
+Use scala lambdas afterwards to get the required results. 
+
+### RDDFast
 Use a `mutable.HashMap` to calculate the counts and a `mutable.PriorityQueue` along with a minimum value to
 get the top 10 results.
 
-## DataSetWindow
-Filter out the empty `allNames` using the `filter` spark feature before doing the `flatMap`.
-Use a `Timestamp` to store the date.
-`groupBy` the `date` and `topicName` and `count`.
-Use the `Window` class to partition the results and count the top 10.
-
+## Dataset Implementation
+Filtering, grouping and counting the desired format use the `Window` class to partition the results and count the top 10.
 ![Dataset-DAG](figures/dataset.png)
 
 ***Figure 2*** - Dataset DAG Visualization
 
-## DataSetWindow2
+### DataSetWindow
+Filter out the empty `allNames` using the `filter` spark feature before doing the `flatMap`.
+Use a `Timestamp` to store the date.
+`groupBy` the `date` and `topicName` and `count`.
+
+### DataSetWindow2
 Filter out the empty `allNames` using the `filter` spark feature before doing the `flatMap`.
 Use a `Int` to store the date.
 `groupBy` the `date` and `topicName` and `count`.
-Use the `Window` class to partition the results and count the top 10.
 
-## DataSetWindowFast
+### DataSetWindowFast
 Filter out the empty `allNames` using an if in the `flatMap` previously mentioned.
 Use a `Int` to store the date.
 `groupBy` the `date` and `topicName` and `count`.
-Use the `Window` class to partition the results and count the top 10.
-
-## DataSetWindowFast
-
-TODO Mihai
 
 # Initial tests
 
