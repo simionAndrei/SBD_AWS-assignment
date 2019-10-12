@@ -150,7 +150,20 @@ under the GC it provides lower overhead.
 | 11         | **DatasetWindowFast** with 3 executors per node, 11 cores and 12GB memory per executor, KryoSerializer and offHeap of 16GB   | 355.56s |
 | 12         | **DatasetWindowFast** with 5 executors per node, 7 cores and 8GB memory per executor, KryoSerializer and offHeap of 16GB     | 341.14s |
 
-***Table 3*** - Running results on 20c4.8xlarge (36vCore, 60GB) AWS instances  
+***Table 3*** - Running results on 20c4.8xlarge (36vCore, 60GB) AWS instances
+
+![Spark-hist](figures/final_run_sparkh.png)
+
+***Figure 4*** - Spark History Server for running ID 12 from **Table 2**
+
+![Resource-man](figures/final_run_time.png)
+
+***Figure 5*** -Application output for running ID 12 from **Table 2**
+
+![Ganglia](figures/final_run_ganglia.png)
+
+***Figure 5*** - Ganglia for the final running tests
+
 
 # Conclusion
 In conclusion the fastest way to solve this problem is by using a DataSet implementation, taking advantage of the features
