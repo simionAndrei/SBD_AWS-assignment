@@ -9,21 +9,26 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 
 1.  [Introduction](#introduction)
 2.  [Solution details](#solution-details)
-  * [RDD](#rdd)
-  * [RDDFast](#rddfast)
-  * [DataSetWindow](#datasetwindow)
-  * [DataSetWindow2](#datasetwindow2)
-  * [DataSetWindowFast](#datasetwindowfast)
+  * [RDD Implementation](#rdd-implementation)
+    - [RDD class](#rdd-class)
+    - [RDDFast class](#rddfast-class)
+  * [Dataset implementation](#dataset-implementation)
+    - [DataSetWindow class](#datasetwindow-class)
+    - [DataSetWindow2 class](#datasetwindow2-class)
+    - [DataSetWindowFast class](#datasetwindowfast-class)
 3.  [Initial tests](#initial-tests)
   * [Small 10 machines cluster](#small-10-machines-cluster)
   * [Medium 10 machines cluster](#medium-10-machines-cluster)
-4.  [Running parameters configuration](#running-parameters-configuration)
-  * [Number of executors and memory](#number-of-executors-and-memory)
+4.  [Running with default configurations](#running-with-default-configurations)
+5.  [Running with customized configurations](#running-with-customized-configurations)
+  * [Number of executors](#number-of-executors)
+  * [Memory](#memory)
   * [Kryo Serializer](#kyro-serializer)
   * [offHeap enabled](#offHeap-enabled)
 5.  [Final tests](#final-tests)
-  * [Running with default configurations](#running-with-default-configurations)
-  * [Running with custom configurations](#running-with-custom-configurations)
+  * [Final 20 machines cluster](#final-20-machines-cluster)
+  * [Cost overview](#cost-overview)
+6.  [Conclusion](#conclusion)
 
 
 # Introduction
@@ -141,7 +146,7 @@ to consume more memory and save time on GC cycles.
 
 # Final tests
 
-## Large 20 machines cluster
+## Final 20 machines cluster
 
 | Running ID | Description                                                                                                                  | Time    |
 |------------|------------------------------------------------------------------------------------------------------------------------------|---------|
