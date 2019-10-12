@@ -141,7 +141,7 @@ to consume more memory and save time on GC cycles.
 
 # Final tests
 
-## Running with custom configurations
+## Large 20 machines cluster
 
 | Running ID | Description                                                                                                                  | Time    |
 |------------|------------------------------------------------------------------------------------------------------------------------------|---------|
@@ -171,6 +171,32 @@ to consume more memory and save time on GC cycles.
 ![Ganglia](figures/final_run_ganglia.png)
 
 ***Figure 6*** - Ganglia for the final running tests
+
+## Cost overview
+
+| Instance type        | Price     |20 instances price|
+|----------------------|-----------|------------------|
+| c4.8xlarge on-spot   | 0.515$/hr | 0.17167$/min     |
+| c4.8xlarge on-demand | 1.519$/hr | 0.50633$/min     |
+
+***Table 4*** - AWS c4.8xlarge instance pricing
+
+| Running ID | On-spot price | On-demand price |
+|------------|---------------|-----------------|
+| 1          | 1.153$        | 3.401$          |
+| 2          | 1.868$        | 5.511$          |
+| 3          | 1.353$        | 3.991$          |
+| 4          | 1.302$        | 3.841$          |
+| 5          | 1.216$        | 3.588$          |
+| 6          | 1.145$        | 3.378$          |
+| 7          | 1.237$        | 3.649$          |
+| 8          | 1.101$        | 3.249$          |
+| 9          | 1.091$        | 3.216$          |
+| 10         | 1.064$        | 3.141$          |
+| 11         | 1.017$        | 3.001$          |
+| 12         | 0.976$        | 2.878$          |
+
+***Table 5*** - Cost overview for the final tests
 
 
 # Conclusion
