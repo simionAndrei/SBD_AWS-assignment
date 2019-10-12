@@ -113,6 +113,8 @@ num_cores executors) is not much better, as we can not take advantage of running
 This will also result in memory overhead as the potentially shared variables need to be replicated on each JVM.
 We have also experimentally proven these claims, therefore a balanced approach is required.
 
+Also it is very important to leave 1-2 free cores for the rest of the running processes(YARN etc.).
+
 ## Memory
 You can increase/decrease the memory executors have using `driver-memory` and `executor-memory`.
 According to an [Amazon blog post](https://aws.amazon.com/blogs/big-data/best-practices-for-successfully-managing-memory-for-apache-spark-applications-on-amazon-emr/)
@@ -131,9 +133,6 @@ under the GC it provides lower overhead.
 
 # Final tests
 
-
-
-
 ## Running with custom configurations
 
 | Running ID | Description                                                                                                                  | Time    |
@@ -150,3 +149,8 @@ under the GC it provides lower overhead.
 | 10         | **DatasetWindowFast** with 2 executors per node, 17 cores and 16GB memory per executor, KryoSerializer and offHeap of 16GB   | 372.11s |
 | 11         | **DatasetWindowFast** with 3 executors per node, 11 cores and 12GB memory per executor, KryoSerializer and offHeap of 16GB   | 355.56s |
 | 12         | **DatasetWindowFast** with 5 executors per node, 7 cores and 8GB memory per executor, KryoSerializer and offHeap of 16GB     | 341.14s |
+
+# Conclusion
+In conclusion the fastest way to solve this problem is by using a DataSet implementation, taking advantage of the features
+that solve the problem of the JVM usage, selecting the right amount of cores per executor as to not hard the HDFS(7 cores)
+and maxing out on the cores(5 executors) and memory(8GB with 16 offHeap) while leaving some out for the rest of the processes.
