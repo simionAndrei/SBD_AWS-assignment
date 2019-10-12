@@ -21,6 +21,8 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
   * [Kryo Serializer](#kyro-serializer)
   * [offHeap enabled](#offHeap-enabled)
 5.  [Final tests](#final-tests)
+  * [Running with default configurations](#running-with-default-configurations)
+  * [Running with custom configurations](#running-with-custom-configurations)
 
 
 # Introduction
@@ -78,6 +80,13 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 
 
 # Final tests
+
+## Running with default configurations
+
+TODO Error out of memory
+
+
+## Running with custom configurations
 
 | Running ID | Description                                                                                                        | Time    |
 |------------|--------------------------------------------------------------------------------------------------------------------|---------|
