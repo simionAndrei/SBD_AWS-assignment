@@ -9,7 +9,12 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 
 1.  [Introduction](#introduction)
 2.  [Solution details](#solution-details)
+  * [RDD](#rdd)
+  * [RDDFast](#rddfast)
+  * [DataSetWindow](#datasetwindow)
+  * [DataSetWindow2](#datasetwindow2)
 3.  [Initial tests](#initial-tests)
+  * [Small 10 machines cluster (AWS m4.large)](#small-10-machines-cluster-(AWS-m4.large))
 4.  [Running parameters configuration](#running-parameters-configuration)
 5.  [Final tests](#final-tests)
 
@@ -22,17 +27,18 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 
 # Solution details
 
-## DataSetWindow
-
 ## RDD
 
 ## RDDFast
+
+## DataSetWindow
 
 ## DataSetWindow2
 
 # Initial tests
 
 
+## Small 10 machines cluster (AWS m4.large)
 
 | Running ID | Data interval | Input size | Shuffle size | Time     |
 |------------|---------------|------------|--------------|----------|
@@ -42,6 +48,8 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 
 ***Table 1*** - Running results on 10m4.large (4vCore, 8GB) AWS instances
 
+
+## Medium 10 machines cluster (AWS m4.xlarge)
 
 | Running ID | Data interval | Input size | Shuffle size | Time     |
 |------------|---------------|------------|--------------|----------|
