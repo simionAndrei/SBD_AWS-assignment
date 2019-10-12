@@ -17,6 +17,9 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
   * [Small 10 machines cluster](#small-10-machines-cluster)
   * [Medium 10 machines cluster](#medium-10-machines-cluster)
 4.  [Running parameters configuration](#running-parameters-configuration)
+  * [Number of executors and memory](#number-of-executors-and-memory)
+  * [Kryo Serializer](#kyro-serializer)
+  * [offHeap enabled](#offHeap-enabled)
 5.  [Final tests](#final-tests)
 
 
@@ -69,7 +72,7 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 
 ## Number of executors and memory
 
-## KryoSerializer
+## Kryo Serializer
 
 ## offHeap enabled
 
