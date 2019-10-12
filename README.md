@@ -73,7 +73,7 @@ Use an `Int` to store the date.
 # Initial tests
 Initially we wanted to see if our application scale with the number of available cores. We have determined that as long as the servers do not
 run into memory problems, our application scale linearly with the resources. One thing to note is that on each core, a fixed
-number of resources(core and memory) has to be allocated in order for the cluster to run (eg YARN). This makes powerful
+number of resources(core and memory) has to be allocated in order for the cluster to run (eg [YARN](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html)). This makes powerful
 machines more efficient, then the equivalent of more but smaller ones.
 
 We have also determined, by looking at the shuffle size, that the Kyro serialization decreases the overhead (smaller shuffle size when Kiro Serializer is enabled). Moreover, on the small tests the offHeap and Kyro serialization settings seem to have negligible impact on speed.
@@ -106,8 +106,8 @@ All tests performed on the small and medium clusters were conducted using the `R
 
 
 # Running with default configurations
-Unfortunately with defaults we were running out of memory and the cluster was crashing.
-As far as we can tell we were not even using the YARN. In the interface it was registering that we were
+Unfortunately when running on the full data with `spark-submit` default configuration, we were encountered with out of memory (`java.lang.OutOfMemoryError: Java heap space`) and the cluster was crashing.
+As far as we can tell, we were not even using the YARN. In the interface it was registering that we were
 only using 1 vCPU per slave.
 
 
