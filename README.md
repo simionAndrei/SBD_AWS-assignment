@@ -97,13 +97,25 @@ Use a `Int` to store the date.
 <sup>2</sup> 2.3GB when KryoSerializer enabled    
 
 
+# Running with default configurations
+Unfortunately with defaults we were running out of memory and the cluster was crashing.
+As far as we can tell we were not even using the YARN. In the interface it was registering that we were
+only using 1 vCPU per slave.
 
 
 # Running parameters configuration
 
-## Number of executors and memory
+## Number of executors
+Tunning the n
 According to [this blog post](https://spoddutur.github.io/spark-notes/distribution_of_executors_cores_and_memory_for_spark_application.html),
 the HDFS has problems handling more then 5 tasks per executor.
+
+## Memory
+You can increase/decrease the memory executors have using `driver-memory` and `executor-memory`.
+According to an [Amazon blog post](https://aws.amazon.com/blogs/big-data/best-practices-for-successfully-managing-memory-for-apache-spark-applications-on-amazon-emr/)
+it is recommended to set them both to the same value, but they must all fit inside a nodes memory so
+`num_executor * executor_memory < node_memory`. We should also consider that there are more processes running on the
+nodes, so leave some out for them.  
 
 ## Kryo Serializer
 [Spark uses by default the standard Java serializer](#https://spark.apache.org/docs/latest/tuning.html#data-serialization).
@@ -116,8 +128,7 @@ under the GC it provides lower overhead.
 
 # Final tests
 
-## Running with default configurations
-Unfortunately with defaults we were running out of memory and the cluster was crashing.
+
 
 
 ## Running with custom configurations
