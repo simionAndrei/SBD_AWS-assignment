@@ -278,10 +278,10 @@ the same proportions as the on-demand price for `c4.8xlarge`, we could present t
 It would have been nice to actually test this scenario, but unfortunately we have no credits left on AWS.
 
 In our previous report we mentioned that it would be nice to give best price under 4h, 2h, 1h, 30m and 15m. Assuming
-linear scaling, we can easily deduce a formula
-`desired_cost_$ * desired_time_s = cost_full_run_$ * full_run_time_s` so for us
+linear scaling, we can easily deduce a formula as
+`desired_cost_$ * desired_time_s = cost_full_run_$ * full_run_time_s`, so for us
 `desired_cost_$ = 216.1 / desired_time_s` assuming we could actually scale the resources in a continuous fashion,
-not discreet. Again it would have been nice to test this. The results should be:
+not discreet. Again it would have been nice to test this. The estimated results are:
 
 | Finish in under | Cost (estimated on-spot) |
 |-----------------|--------------------------|
@@ -291,7 +291,7 @@ not discreet. Again it would have been nice to test this. The results should be:
 | 30m             | 0.12$                    |
 | 15m             | 0.24$                    |
 
-***Table 7*** - TODO caption
+***Table 7*** - Cost of processing the whole data in under a defined amount of time using estimated on-spot price
 
 # Conclusion
 In conclusion the fastest way to solve the problem is by using a DataSet implementation, taking advantage of the features
