@@ -202,6 +202,8 @@ Bellow a couple of print-screens are shown from the Web Interfaces used to monit
 
 ## Cost overview
 
+
+
 | Instance type        | Price     |20 instances price|
 |----------------------|-----------|------------------|
 | c4.8xlarge on-spot   | 0.515$/hr | 0.17167$/min     |
@@ -277,13 +279,13 @@ linear scaling we can easily deduce a formula
 `desired_cost_$ = 216.1 / desired_time_s` assuming we could actually scale the resources in a continuous fashion,
 not distributed. Again it would have been nice to test this. The results should be:
 
-| Finish in under | Cost (on-spot) |
-|-----------------|----------------|
-| 4h              | 0.015          |
-| 2h              | 0.03           |
-| 1h              | 0.06           |
-| 30m             | 0.12           |
-| 15m             | 0.24           |
+| Finish in under | Cost (estimated on-spot) |
+|-----------------|--------------------------|
+| 4h              | 0.015                    |
+| 2h              | 0.03$                    |
+| 1h              | 0.06$                    |
+| 30m             | 0.12$                    |
+| 15m             | 0.24$                    |
 
 ***Table 7*** - TODO caption
 
