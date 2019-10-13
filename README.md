@@ -219,6 +219,20 @@ ascending order. We calculated the results for the 5 and 7 group. On both the `c
 
 TODO TABLE
 
+| Group 5      | Group 7      |
+|--------------|--------------|
+| a1.4xlarge   | a1.4xlarge   |
+| a1.metal     | a1.metal     |
+| a1.2xlarge   | a1.2xlarge   |
+| c5.24xlarge  | t3a.2xlarge  |
+| c5.metal     | m5a.16xlarge |
+| m5a.24xlarge | c5.18xlarge  |
+| c5.18xlarge  | c5.9xlarge   |
+| c5.9xlarge   | c5.24xlarge  |
+| c5.12xlarge  | c5.metal     |
+| c5.4xlarge   | m5a.24xlarge |
+| c4.8xlarge   | c4.8xlarge   |
+
 Take into account that this is an estimation and does not take in account the differences between the CPU types, network
 bottlenecks and other such factors.
 
