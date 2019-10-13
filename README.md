@@ -233,7 +233,7 @@ on-spot and on-demand instances.
 
 ***Table 5*** - Cost overview for the final tests
 
-## Best price estimation
+# Best price estimation
 During our time with the `c4.8xlarge` cluster we have determined 3 criteria:
 * At least 1 core should be allocated to other processes
 * 7 cores is the optimal amount on the `c4.8xlarge`
