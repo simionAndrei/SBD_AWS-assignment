@@ -37,9 +37,9 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 For this assignment our first step was to adapt our implementation for running on AWS (changing how we read the files,
 spark context settings etc.). One of the main problem we encountered from the beginning  was provisioning of `c4.8xlarge`
 in Ohio region where we requested and received an increased limit of 20 after several tries (from 0 instances initially,
-followed by 10). Starting a cluster with 20 c4.8xlarge, even with on-demand instances, was not possible in Ohio
+followed by 10). Starting a cluster with 20 `c4.8xlarge`, even with on-demand instances, was not possible in Ohio
 regardless of the time of the day when we tried. We managed to get our final results using IAM access and in the last
-days before the deadline we also received a new increased limit of 20 c4.8xlarge in N. Virginia, where provisioning
+days before the deadline we also received a new increased limit of 20 `c4.8xlarge` in N. Virginia, where provisioning
 works. In order to monitor our application when running on AWS, 3 Web Interfaces (Ganglia, Spark History Server and
 Hadoop Resource Manager) were accessed after SSH tunneling and
 [FoxyProxy](https://chrome.google.com/webstore/detail/foxyproxy-standard/gcknhkkoolaabfmlnjonogaaifnjlfnp) on Google
@@ -108,7 +108,7 @@ All tests performed on the small and medium clusters were conducted using the `R
 | 2          | 1 month       | ~74GB      | ~999MB       | 264.13s  |
 | 3          | 1 year        | ~1.2TB     | ~16GB        | 3680.12s |
 
-***Table 1*** - Running results on 10m4.large (4vCore, 8GB) AWS instances
+***Table 1*** - Running results on 10 `m4.large` (4vCore, 8GB) AWS instances
 
 
 ## Medium 10 machines cluster
@@ -119,7 +119,7 @@ All tests performed on the small and medium clusters were conducted using the `R
 | 2          | 3 months      | ~214GB     | ~2.8GB<sup>2</sup>     | 417.66s  |
 | 3          | 1 year        | ~1.2TB     | ~16GB        | 1815.83s |
 
-***Table 2*** - Running results on 10m4.xlarge (8vCore, 16GB) AWS instances  
+***Table 2*** - Running results on 10 `m4.xlarge` (8vCore, 16GB) AWS instances  
 <sup>1</sup> 822.5MB when KryoSerializer enabled  
 <sup>2</sup> 2.3GB when KryoSerializer enabled    
 
@@ -165,7 +165,7 @@ to consume more memory and save time on GC cycles.
 For obtaining our final results when running on the full data, we conducted 14 experimental runs using different
 implementations (as described in [Solution details](#solution-details) and spark running configurations
 (as explained in [Running with customized configurations](#running-with-customized-configurations)).
-The results using a 20 c4.8xlarge instances AWS cluster are displayed bellow.
+The results using a 20 `c4.8xlarge` instances AWS cluster are displayed bellow.
 
 | Running ID | Description                                                                                                                  | Time    |
 |------------|------------------------------------------------------------------------------------------------------------------------------|---------|
@@ -184,7 +184,7 @@ The results using a 20 c4.8xlarge instances AWS cluster are displayed bellow.
 | 13         | **DatasetWindowFast** with 7 executors per node, 5 cores and 6GB memory per executor, KryoSerializer and offHeap of 16GB   | 376.01s |
 | 14         | **DatasetWindowFast** with 7 executors per node, 5 cores and 5.7GB memory per executor, KryoSerializer and offHeap of 16GB   | 343.04s |
 
-***Table 3*** - Running results on 20c4.8xlarge (36vCore, 60GB) AWS instances
+***Table 3*** - Running results on 20 `c4.8xlarge` (36vCore, 60GB) AWS instances
 
 Bellow a couple of print-screens are shown from the Web Interfaces used to monitor the running of our final experiments:
 
@@ -209,7 +209,7 @@ According to [Amazon EC2 Pricing](https://aws.amazon.com/ec2/pricing/on-demand/)
 | c4.8xlarge on-spot   | 0.515$/hr | 0.17167$/min     |
 | c4.8xlarge on-demand | 1.519$/hr | 0.50633$/min     |
 
-***Table 4*** - AWS c4.8xlarge instance pricing
+***Table 4*** - AWS `c4.8xlarge` instance pricing
 
 Using this values from above we calculated the price for each of the run experiment from _Table 3_, both for
 on-spot and on-demand instances.
@@ -234,10 +234,10 @@ on-spot and on-demand instances.
 ***Table 5*** - Cost overview for the final tests
 
 ## Best price estimation
-During our time with the c4.8xlarge cluster we have determined 3 criteria:
+During our time with the `c4.8xlarge` cluster we have determined 3 criteria:
 * At least 1 core should be allocated to other processes
 * 7 cores is the optimal amount on the `c4.8xlarge`
-* 5 cores should be the optimal but this not hold true for our `c4.8xlarge`, maybe because of memory
+* 5 cores should be the optimal but this not hold true for our `c4.8xlarge`, maybe because of memory usage
 * At least 8GB / 5 cores are required for an optimal memory consumption
 
 Because we want to use our money more efficiently we have made the [best_price_calculation.js](best_price_calculation.js)
