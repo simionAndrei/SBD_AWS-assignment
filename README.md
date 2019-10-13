@@ -276,5 +276,5 @@ not distributed. Again it would have been nice to test this. The results should 
 
 # Conclusion
 In conclusion the fastest way to solve this problem is by using a DataSet implementation, taking advantage of the features
-that solve the problem of the JVM usage, selecting the right amount of cores per executor as to not hard the HDFS(7 cores)
+that solve the problem of the JVM usage, selecting the right amount of cores per executor as to not hurt the HDFS(7 cores)
 and maxing out on the cores(5 executors) and memory(8GB with 16 offHeap) while leaving some out for the rest of the processes.
