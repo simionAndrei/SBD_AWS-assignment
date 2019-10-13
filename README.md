@@ -217,12 +217,11 @@ During our time with the c4.8xlarge cluster we have determined 3 criteria:
 
 Because we want to use our money more efficiently we have made the [best_price_calculation.js](best_price_calculation.js)
 script.
-This script has preloaded the Amazon on-demand prices and after taking into account the previously mention criteria
-it calculates the cost per N cpu group(so amount of optimal executors that fit inside a node) and sorts them in
-ascending order. We calculated the results for the 5 and 7 group. On both the `c4.8xlarge` registered only at position
+This script has preloaded the Amazon on-demand prices and after taking into account the previously mention criteria(
+minimum core requirements, minimum memory requirements) it calculates the cost per N cpu group(so amount of optimal
+executors that fit inside a node) and sorts them in ascending order. We calculated the results for the 5 and 7 group.
+On both the `c4.8xlarge` registered only at position
 11. Here are the top 11:
-
-TODO TABLE
 
 | Group 5      | Group 7      |
 |--------------|--------------|
@@ -241,7 +240,13 @@ TODO TABLE
 Take into account that this is an estimation and does not take in account the differences between the CPU types, network
 bottlenecks and other such factors.
 
-It would have been nice to test with these different clusters but unfortunately we have no credits left...
+Be comparing the top 1, `a1.4xlarge`(16 vCPU, 32GB, 0.408$/h, 0.204$/7group/H) with our cluster of 
+`c4.8xlarge`(36 vCPU, 60GB, 1.591, 0.3182$/7group/H) we notice that the first is 4 times cheaper per hour while providing
+almost half the performance. Even if we take the 7 group(which has a big disadvantage for `a1.4xlarge` because you
+leave a core unused) it is still 40% cheaper. It is our belief that replacing the workers with `a1.4xlarge` will
+decrease the computation costs by ~35% while providing almost the same execution time.
+
+It would have been nice to actually test this but unfortunately we have no credits left...
 
 # Conclusion
 In conclusion the fastest way to solve this problem is by using a DataSet implementation, taking advantage of the features
