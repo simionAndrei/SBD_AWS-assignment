@@ -237,16 +237,15 @@ on-spot and on-demand instances.
 During our time with the `c4.8xlarge` cluster we have determined 3 criteria:
 * At least 1 core should be allocated to other processes
 * 7 cores is the optimal amount on the `c4.8xlarge`
-* 5 cores should be the optimal but this not hold true for our `c4.8xlarge`, maybe because of memory usage
+* 5 cores should be the optimal but this not hold true for our `c4.8xlarge` cluster, maybe because of memory usage
 * At least 8GB / 5 cores are required for an optimal memory consumption
 
-Because we want to use our money more efficiently we have made the [best_price_calculation.js](best_price_calculation.js)
+Because we want to use our money more efficiently, we have made the [best_price_calculation.js](best_price_calculation.js)
 script.
-This script has preloaded the Amazon on-demand prices and after taking into account the previously mention criteria(
-minimum core requirements, minimum memory requirements) it calculates the cost per N cpu group(so amount of optimal
-executors that fit inside a node) and sorts them in ascending order. We calculated the results for the 5 and 7 group.
-On both the `c4.8xlarge` registered only at position
-11. Here are the top 11:
+This script has preloaded the Amazon on-demand prices and after taking into account the previously mention criteria
+(minimum core requirements, minimum memory requirements) it calculates the cost per N-CPU group (amount of optimal
+executors that fit inside a node) and sorts them in ascending order. We calculated the results for the 5 and 7 groups.
+On both, the `c4.8xlarge` registered only at position 11. Here are the tops 11:
 
 | Group 5      | Group 7      |
 |--------------|--------------|
