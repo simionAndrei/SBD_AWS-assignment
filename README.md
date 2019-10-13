@@ -270,9 +270,9 @@ bottlenecks and other such factors.
 By comparing the top-1, `a1.4xlarge`(16 vCPU, 32GB, 0.408$/h, 0.204$/7-core-executor/h) with our cluster of
 `c4.8xlarge`(36 vCPU, 60GB, 1.591, 0.3182$/7-core-executor/h) we notice that the first is 4 times cheaper per hour while providing
 almost half the performance. Even if we take the 7-core executor (which has a big disadvantage for `a1.4xlarge` because you
-leave a core unused (7*2+1=15, and the node has 16)) it is still 40% cheaper. It is our belief that replacing the workers with `a1.4xlarge` will
-decrease the computation costs by ~35% while providing almost the same execution time. Assuming the on-spot price has
-the same proportions as the on-demand price for `c4.8xlarge`, we could present the answer for 0.63$ using on-spot instances and
+leave a core unused (7*2+1=15, and the node has 16)) it is still 40% cheaper. It is our belief that replacing the workers with
+`a1.4xlarge` will decrease the computation costs by ~35% while providing almost the same execution time. Assuming the on-spot price
+has the same proportions as the on-demand price for `c4.8xlarge`, we could present the answer for 0.63$ using on-spot instances and
 1.86$ for on-demand.
 
 It would have been nice to actually test this scenario, but unfortunately we have no credits left on AWS.
