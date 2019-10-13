@@ -23,7 +23,7 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 5.  [Running with customized configurations](#running-with-customized-configurations)
   * [Number of executors](#number-of-executors)
   * [Memory](#memory)
-  * [Kryo Serializer](#kyro-serializer)
+  * [Kryo Serializer](#kryo-serializer)
   * [offHeap enabled](#offHeap-enabled)
 5.  [Final tests](#final-tests)
   * [Final 20 machines cluster](#final-20-machines-cluster)
