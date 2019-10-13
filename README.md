@@ -65,7 +65,7 @@ Group by the day, this will bring all the data locally to an executor, making it
 Use scala lambdas afterwards to get the required results.
 
 ### RDDFast class
-Use a `mutable.HashMap` to calculate the counts and a `mutable.PriorityQueue` while storing the minimum value 
+Use a `mutable.HashMap` to calculate the counts and a `mutable.PriorityQueue` while storing the minimum value
 (in order to avoid push-pop operations) to get the top 10 results.
 
 ## Dataset Implementation
@@ -98,7 +98,7 @@ machines more efficient, then the equivalent of more but smaller ones.
 
 We have also determined, by looking at the shuffle size, that the Kryo serialization decreases the overhead (smaller shuffle size when Kiro Serializer is enabled). Moreover, on the small tests the offHeap and Kryo serialization settings seem to have negligible impact on speed.
 
-All tests performed on the small and medium clusters were conducted using the `RDD` class implementation.
+All tests performed on the small and medium clusters were conducted using the [RDD class](#rdd-class) implementation.
 
 
 ## Small 10 machines cluster
