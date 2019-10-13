@@ -263,10 +263,10 @@ On both, the `c4.8xlarge` is registered only at position 11. Here are the top-11
 
 ***Table 6*** - Best AWS instances money-wise for 5-CPU and 7-CPU executors
 
-Take into account that this is an estimation and does not take in account the differences between the CPU types, network
+Keep in mind that this is an estimation and does not take into account the differences between the CPU types, network
 bottlenecks and other such factors.
 
-Be comparing the top 1, `a1.4xlarge`(16 vCPU, 32GB, 0.408$/h, 0.204$/7-core-executor/h) with our cluster of
+By comparing the top-1, `a1.4xlarge`(16 vCPU, 32GB, 0.408$/h, 0.204$/7-core-executor/h) with our cluster of
 `c4.8xlarge`(36 vCPU, 60GB, 1.591, 0.3182$/7-core-executor/h) we notice that the first is 4 times cheaper per hour while providing
 almost half the performance. Even if we take the 7-core executor(which has a big disadvantage for `a1.4xlarge` because you
 leave a core unused(7*2+1=15, and the node has 16)) it is still 40% cheaper. It is our belief that replacing the workers with `a1.4xlarge` will
