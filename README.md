@@ -211,7 +211,7 @@ According to [Amazon EC2 Pricing](https://aws.amazon.com/ec2/pricing/on-demand/)
 
 ***Table 4*** - AWS `c4.8xlarge` instance pricing
 
-Using this values from above we calculated the price for each of the run experiment from _Table 3_, both for
+Using this values from above we calculated the price for each of the run experiments from _Table 3_, both for
 on-spot and on-demand instances.
 
 | Running ID | On-spot price | On-demand price |
