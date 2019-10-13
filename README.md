@@ -135,13 +135,13 @@ was too small and could not fit all the desired objects in it. Also, as far as w
 
 ## Number of executors
 Tuning the right number of executors is tricky. According to [this blog post](https://spoddutur.github.io/spark-notes/distribution_of_executors_cores_and_memory_for_spark_application.html),
-the HDFS has problems handling more then 5 tasks per executor. This mean that a Fat executor(1 executor with all the
-cores per node) setup will hurt the HDFS throughput. The Slim executor setup(1 core per executor and nodes have
+the HDFS has problems handling more then 5 tasks per executor. This mean that a Fat executor (1 executor with all the
+cores per node) setup will hurt the HDFS throughput. The Slim executor setup (1 core per executor and nodes have
 num_cores executors) is not much better, as we can not take advantage of running multiple tasks on the same JVM.
 This will also result in memory overhead as the potentially shared variables need to be replicated on each JVM.
 We have also experimentally proven these claims, therefore a balanced approach is required.
 
-Also it is very important to leave 1-2 free cores for the rest of the running processes(YARN etc.).
+Also it is very important to leave 1-2 free cores for the rest of the running processes (YARN etc.).
 
 ## Memory
 You can increase/decrease the memory executors have using `driver-memory` and `executor-memory`.
