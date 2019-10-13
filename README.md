@@ -245,7 +245,7 @@ script.
 This script has preloaded the Amazon on-demand prices and after taking into account the previously mention criteria
 (minimum core requirements, minimum memory requirements) it calculates the cost per N-CPU group (amount of optimal
 executors that fit inside a node) and sorts them in ascending order. We calculated the results for the 5 and 7 groups.
-On both, the `c4.8xlarge` registered only at position 11. Here are the tops 11:
+On both, the `c4.8xlarge` is registered only at position 11. Here are the top-11 for 5 and 7 groups:
 
 | Group 5      | Group 7      |
 |--------------|--------------|
@@ -261,7 +261,7 @@ On both, the `c4.8xlarge` registered only at position 11. Here are the tops 11:
 | c5.4xlarge   | m5a.24xlarge |
 | c4.8xlarge   | c4.8xlarge   |
 
-***Table 6*** - TODO caption
+***Table 6*** - Best AWS instances money-wise for 5-CPU and 7-CPU groups
 
 Take into account that this is an estimation and does not take in account the differences between the CPU types, network
 bottlenecks and other such factors.
