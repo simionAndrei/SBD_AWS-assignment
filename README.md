@@ -233,11 +233,11 @@ on-spot and on-demand instances.
 
 ***Table 5*** - Cost overview for the final tests
 
-# Best price estimation
-During our time with the `c4.8xlarge` cluster we have determined 3 criteria:
+## Best price estimation
+During our time with the `c4.8xlarge` cluster we have determined 4 observations:
 * At least 1 core should be allocated to other processes
 * 7 cores is the optimal amount on the `c4.8xlarge`
-* 5 cores should be the optimal but this not hold true for our `c4.8xlarge` cluster, maybe because of memory usage
+* 5 cores should be the optimal but this not hold true for our `c4.8xlarge` cluster, maybe because of lack of memory
 * At least 8GB / 5 cores are required for an optimal memory consumption
 
 Because we want to use our money more efficiently, we have made the [best_price_calculation.js](best_price_calculation.js)
@@ -269,7 +269,7 @@ bottlenecks and other such factors.
 Be comparing the top 1, `a1.4xlarge`(16 vCPU, 32GB, 0.408$/h, 0.204$/7group/H) with our cluster of
 `c4.8xlarge`(36 vCPU, 60GB, 1.591, 0.3182$/7group/H) we notice that the first is 4 times cheaper per hour while providing
 almost half the performance. Even if we take the 7 group(which has a big disadvantage for `a1.4xlarge` because you
-leave a core unused) it is still 40% cheaper. It is our belief that replacing the workers with `a1.4xlarge` will
+leave a core unused(7*2+1=15)) it is still 40% cheaper. It is our belief that replacing the workers with `a1.4xlarge` will
 decrease the computation costs by ~35% while providing almost the same execution time. Assuming the on-spot price has
 the same proportions as the on-demand price we could present the answer for 0.63$ and 1.86 for on-demand.
 
@@ -279,7 +279,7 @@ In our previous report we mentioned that it would be nice to give best price und
 linear scaling we can easily deduce a formula
 `desired_cost_$ * desired_time_s = cost_full_run_$ * full_run_time_s` so for us
 `desired_cost_$ = 216.1 / desired_time_s` assuming we could actually scale the resources in a continuous fashion,
-not distributed. Again it would have been nice to test this. The results should be:
+not discreet. Again it would have been nice to test this. The results should be:
 
 | Finish in under | Cost (estimated on-spot) |
 |-----------------|--------------------------|
