@@ -227,7 +227,7 @@ on-spot and on-demand instances.
 | 9          | 1.091$        | 3.216$          |
 | 10         | 1.064$        | 3.141$          |
 | 11         | 1.017$        | 3.001$          |
-| 12         | 0.976$        | 2.878$          |
+| 12         | **0.976$**    | **2.878$**      |
 | 13         | 1.075$        | 3.173$          |  
 | 14         | 0.981$        | 2.894$          |
 
@@ -294,6 +294,9 @@ not discreet. Again it would have been nice to test this. The estimated results 
 ***Table 7*** - Cost of processing the whole data in under a defined amount of time using estimated on-spot price
 
 # Conclusion
-In conclusion the fastest way to solve the problem is by using a DataSet implementation, taking advantage of the features
-that solve the problems of the JVM usage (Kryo, offHeap), selecting the right amount of cores per executor as to not hurt the HDFS (7
-cores), chosing the maximum amount of executors per node (5, based on the number of cores per executor and available cores per node) and alocating the right amount of memory (8GB per executor and 16GB offHeap) while leaving some out for the rest of the processes.
+In conclusion, the fastest way to solve the problem is by using the DataSet implementation, taking advantage of the features
+that solve the problems of the JVM usage (Kryo, offHeap), selecting the right amount of cores per executor as to not hurt the HDFS
+(7 cores), choosing the maximum amount of executors per node (5, based on the number of cores per executor and available cores per node)
+and allocating the right amount of memory (8GB per executor and 16GB offHeap) while leaving some out for the rest of the processes.
+The entire GDELT data using our fastest DataSet implementation can be processed using the given configuration, 20 `c4.8xlarge` instances,
+in 341.14s (5.68min) with a cost of 0.976$ for on-spot instances and 2.878$ for on-demand ones.
