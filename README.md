@@ -163,7 +163,7 @@ to consume more memory and save time on GC cycles.
 ## Final 20 machines cluster
 
 For obtaining our final results when running on the full data, we conducted 14 experimental runs using different
-implementations (as described in [Solution details](#solution_details) and spark running configurations
+implementations (as described in [Solution details](#solution-details) and spark running configurations
 (as explained in [Running with customized configurations](#running-with-customized-configurations)).
 The results using a 20 c4.8xlarge instances AWS cluster are displayed bellow.
 
@@ -186,7 +186,7 @@ The results using a 20 c4.8xlarge instances AWS cluster are displayed bellow.
 
 ***Table 3*** - Running results on 20c4.8xlarge (36vCore, 60GB) AWS instances
 
-Bellow a couple of print-screens are shown from the Web Interfaces used to monitor the running of our final experiments.
+Bellow a couple of print-screens are shown from the Web Interfaces used to monitor the running of our final experiments:
 
 ![Spark-hist](figures/final_run_sparkh.png)
 
