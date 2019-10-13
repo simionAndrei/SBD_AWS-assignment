@@ -1,4 +1,4 @@
-# Group 44
+# SBD ET4310 2019 Group 44 Assignment 2
 
 by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 [Mihai Voicescu](https://github.com/mihai1voicescu)
@@ -28,10 +28,13 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 5.  [Final tests](#final-tests)
   * [Final 20 machines cluster](#final-20-machines-cluster)
   * [Cost overview](#cost-overview)
-6.  [Conclusion](#conclusion)
+6.  [Best price estimation](#best-price-estimation)
+7.  [Conclusion](#conclusion)
 
 
 # Introduction
+
+For this assignment our first step was to adapt our implementation for running on AWS (changing how we read the files, spark context settings etc.). One of the main problem we encountered from the beginning  was provisioning of c4.8xlarge in Ohio region where we requested and received an increased limit of 20 after several tries (from 0 instances initially, followed by 10). Starting a cluster with 20 c4.8xlarge, even with on-demand instances, was not possible in Ohio regardless of the time of the day when we tried. We managed to get our final results using IAM access and in the last days before the deadline we also received a new increased limit of 20 c4.8xlarge in N. Virginia, where provisioning works. In order to monitor our application when running on AWS, 3 Web Interfaces (Ganglia, Spark History Server and Hadoop Resource Manager) were accessed after SSH tunneling and [FoxyProxy](https://chrome.google.com/webstore/detail/foxyproxy-standard/gcknhkkoolaabfmlnjonogaaifnjlfnp) on Google Chrome. Our initial RDD and Dataset implementations was further improved to maximize the performance. Fine tuning of the spark options was needed to obtain our best result. The cost involved for each option was analyzed along with a best price estimation for different AWS instances configuration.
 
 ![Web_interfaces](figures/web_conn.png)
 
@@ -48,7 +51,7 @@ Group by the day, this will bring all the data locally to an executor, making it
 ***Figure 2*** - RDD DAG Visualization
 
 ### RDD class
-Use scala lambdas afterwards to get the required results. 
+Use scala lambdas afterwards to get the required results.
 
 ### RDDFast class
 Use a `mutable.HashMap` to calculate the counts and a `mutable.PriorityQueue` while storing the minimum value (in order to avoid push-pop operations) to get the top 10 results.
