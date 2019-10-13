@@ -274,7 +274,7 @@ leave a core unused (7*2+1=15, and the node has 16)) it is still 40% cheaper. It
 decrease the computation costs by ~35% while providing almost the same execution time. Assuming the on-spot price has
 the same proportions as the on-demand price we could present the answer for 0.63$ and 1.86$ for on-demand.
 
-It would have been nice to actually test this but unfortunately we have no credits left...
+It would have been nice to actually test this scenario, but unfortunately we have no credits left on AWS.
 
 In our previous report we mentioned that it would be nice to give best price under 4h, 2h, 1h, 30m and 15m. Assuming
 linear scaling we can easily deduce a formula
