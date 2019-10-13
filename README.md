@@ -34,7 +34,18 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
 
 # Introduction
 
-For this assignment our first step was to adapt our implementation for running on AWS (changing how we read the files, spark context settings etc.). One of the main problem we encountered from the beginning  was provisioning of c4.8xlarge in Ohio region where we requested and received an increased limit of 20 after several tries (from 0 instances initially, followed by 10). Starting a cluster with 20 c4.8xlarge, even with on-demand instances, was not possible in Ohio regardless of the time of the day when we tried. We managed to get our final results using IAM access and in the last days before the deadline we also received a new increased limit of 20 c4.8xlarge in N. Virginia, where provisioning works. In order to monitor our application when running on AWS, 3 Web Interfaces (Ganglia, Spark History Server and Hadoop Resource Manager) were accessed after SSH tunneling and [FoxyProxy](https://chrome.google.com/webstore/detail/foxyproxy-standard/gcknhkkoolaabfmlnjonogaaifnjlfnp) on Google Chrome. Our initial RDD and Dataset implementations was further improved to maximize the performance. Fine tuning of the spark options was needed to obtain our best result. The cost involved for each option was analyzed along with a best price estimation for different AWS instances configuration.
+For this assignment our first step was to adapt our implementation for running on AWS (changing how we read the files,
+spark context settings etc.). One of the main problem we encountered from the beginning  was provisioning of `c4.8xlarge`
+in Ohio region where we requested and received an increased limit of 20 after several tries (from 0 instances initially,
+followed by 10). Starting a cluster with 20 c4.8xlarge, even with on-demand instances, was not possible in Ohio
+regardless of the time of the day when we tried. We managed to get our final results using IAM access and in the last
+days before the deadline we also received a new increased limit of 20 c4.8xlarge in N. Virginia, where provisioning
+works. In order to monitor our application when running on AWS, 3 Web Interfaces (Ganglia, Spark History Server and
+Hadoop Resource Manager) were accessed after SSH tunneling and
+[FoxyProxy](https://chrome.google.com/webstore/detail/foxyproxy-standard/gcknhkkoolaabfmlnjonogaaifnjlfnp) on Google
+Chrome. Our initial RDD and Dataset implementations was further improved to maximize the performance. Fine tuning of
+the spark options was needed to obtain our best result. The cost involved for each option was analyzed along with a
+best price estimation for different AWS instances configuration.
 
 ![Web_interfaces](figures/web_conn.png)
 
