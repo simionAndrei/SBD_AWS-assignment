@@ -212,7 +212,7 @@ During our time with the c4.8xlarge cluster we have determined 3 criteria:
 Because we want to use our money more efficiently we have made the [best_price_calculation.js](best_price_calculation.js)
 script.
 This script has preloaded the Amazon on-demand prices and after taking into account the previously mention criteria
-it calculates the cost per 5 cpu group and sorts them in ascend order. The `c4.8xlarge` registered only at position 12:
+it calculates the cost per 5 cpu group and sorts them in ascend order. The `c4.8xlarge` registered only at position 11:
 1. a1.4xlarge
 1. a1.metal
 1. a1.2xlarge
