@@ -162,6 +162,8 @@ to consume more memory and save time on GC cycles.
 | 10         | **DatasetWindowFast** with 2 executors per node, 17 cores and 16GB memory per executor, KryoSerializer and offHeap of 16GB   | 372.11s |
 | 11         | **DatasetWindowFast** with 3 executors per node, 11 cores and 12GB memory per executor, KryoSerializer and offHeap of 16GB   | 355.56s |
 | 12         | **DatasetWindowFast** with 5 executors per node, 7 cores and 8GB memory per executor, KryoSerializer and offHeap of 16GB     | 341.14s |
+| 13         | **DatasetWindowFast** with 7 executors per node, 5 cores and 6GB memory per executor, KryoSerializer and offHeap of 16GB   | 376.01s |
+| 14         | **DatasetWindowFast** with 7 executors per node, 5 cores and 5.7GB memory per executor, KryoSerializer and offHeap of 16GB   | 343.04s |
 
 ***Table 3*** - Running results on 20c4.8xlarge (36vCore, 60GB) AWS instances
 
