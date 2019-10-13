@@ -237,7 +237,7 @@ on-spot and on-demand instances.
 During our time with the `c4.8xlarge` cluster we have determined 4 observations:
 * At least 1 core should be allocated to other processes
 * 7 cores is the optimal amount on the `c4.8xlarge`
-* 5 cores should be the optimal but this not hold true for our `c4.8xlarge` cluster, maybe because of lack of memory
+* 5 cores should be the optimal but this not hold true for our `c4.8xlarge` cluster, maybe due to lack of memory
 * At least 8GB / 5 cores are required for an optimal memory consumption
 
 Because we want to use our money more efficiently, we have made the [best_price_calculation.js](best_price_calculation.js)
