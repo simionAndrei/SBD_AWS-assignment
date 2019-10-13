@@ -206,24 +206,18 @@ to consume more memory and save time on GC cycles.
 ## Best price estimation
 During our time with the c4.8xlarge cluster we have determined 3 criteria:
 * At least 1 core should be allocated to other processes
-* 5 cores should be used per executor to provide good HDFS throughput
+* 7 cores is the optimal amount on the `c4.8xlarge`
+* 5 cores should be the optimal but this not hold true for our `c4.8xlarge`, maybe because of memory
 * At least 8GB / 5 cores are required for an optimal memory consumption
 
 Because we want to use our money more efficiently we have made the [best_price_calculation.js](best_price_calculation.js)
 script.
 This script has preloaded the Amazon on-demand prices and after taking into account the previously mention criteria
-it calculates the cost per 5 cpu group and sorts them in ascending order. The `c4.8xlarge` registered only at position 11:
-1. a1.4xlarge
-1. a1.metal
-1. a1.2xlarge
-1. c5.24xlarge
-1. c5.metal
-1. m5a.24xlarge
-1. c5.9xlarge
-1. c5.18xlarge
-1. c5.4xlarge
-1. c5.12xlarge
-1. c4.8xlarge
+it calculates the cost per N cpu group(so amount of optimal executors that fit inside a node) and sorts them in
+ascending order. We calculated the results for the 5 and 7 group. On both the `c4.8xlarge` registered only at position
+11. Here are the top 11:
+
+TODO TABLE
 
 Take into account that this is an estimation and does not take in account the differences between the CPU types, network
 bottlenecks and other such factors.

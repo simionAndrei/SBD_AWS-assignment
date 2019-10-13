@@ -31,19 +31,34 @@ const withCost = memmoryOK.map(e => {
     return ne;
 });
 
-// calculate cost per group of 5
-const costPerCpuGroup = 5;
-const withCost5 = withCost.map(e => {
-    let ne = Array(...e);
-    let groups = Math.floor(e[cpu] / 5);
-    ne.push(e[cost] / groups);
+function costPreNGroup(n) {
+    // calculate cost per group of 5
+    const costPerCpuGroup = 5;
+    const withCostN = withCost.map(e => {
+        let ne = Array(...e);
+        let groups = Math.floor(e[cpu] / n);
+        ne.push(e[cost] / groups);
 
-    return ne;
-});
+        return ne;
+    });
+
+    withCostN.sort((a, b) => a[costPerCpuGroup] - b[costPerCpuGroup]);
+
+
+    console.log(`Results per ${n} core group`);
+    // console.log(require('util').inspect(withCostN, {depth: null, colors: true}));
+
+
+    console.log("Top 10");
+    console.log(require('util').inspect(withCostN.slice(0, 11), {depth: null, colors: true}));
+
+    console.log("c4.8xlarge Rank: " + (withCostN.findIndex(e => e[name] === "c4.8xlarge") + 1));
+
+    console.log(withCostN.slice(0, 11).map(e => "" + e[0]).join("\n"));
+}
 
 // sort by it
 withCost.sort((a, b) => a[costPerCpu] - b[costPerCpu]);
-withCost5.sort((a, b) => a[costPerCpuGroup] - b[costPerCpuGroup]);
 
 console.log("Results per core");
 console.log(require('util').inspect(withCost, {depth: null, colors: true}));
@@ -54,14 +69,5 @@ console.log(require('util').inspect(withCost.slice(0, 11), {depth: null, colors:
 
 console.log("c4.8xlarge Rank: " + (withCost.findIndex(e => e[name] === "c4.8xlarge") + 1));
 
-
-console.log("Results per 5 core group");
-console.log(require('util').inspect(withCost5, {depth: null, colors: true}));
-
-
-console.log("Top 10");
-console.log(require('util').inspect(withCost5.slice(0, 11), {depth: null, colors: true}));
-
-console.log("c4.8xlarge Rank: " + (withCost5.findIndex(e => e[name] === "c4.8xlarge") + 1));
-
-console.log(withCost5.slice(0, 11).map(e => "1. " + e[0]).join("\n"));
+costPreNGroup(5);
+costPreNGroup(7);
