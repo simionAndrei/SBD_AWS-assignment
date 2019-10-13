@@ -250,6 +250,8 @@ On both the `c4.8xlarge` registered only at position
 | c5.4xlarge   | m5a.24xlarge |
 | c4.8xlarge   | c4.8xlarge   |
 
+***Table 6*** - TODO caption
+
 Take into account that this is an estimation and does not take in account the differences between the CPU types, network
 bottlenecks and other such factors.
 
@@ -275,6 +277,8 @@ not distributed. Again it would have been nice to test this. The results should 
 | 1h              | 0.06           |
 | 30m             | 0.12           |
 | 15m             | 0.24           |
+
+***Table 7*** - TODO caption
 
 # Conclusion
 In conclusion the fastest way to solve the problem is by using a DataSet implementation, taking advantage of the features
