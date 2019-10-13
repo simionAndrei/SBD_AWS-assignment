@@ -272,12 +272,13 @@ By comparing the top-1, `a1.4xlarge`(16 vCPU, 32GB, 0.408$/h, 0.204$/7-core-exec
 almost half the performance. Even if we take the 7-core executor (which has a big disadvantage for `a1.4xlarge` because you
 leave a core unused (7*2+1=15, and the node has 16)) it is still 40% cheaper. It is our belief that replacing the workers with `a1.4xlarge` will
 decrease the computation costs by ~35% while providing almost the same execution time. Assuming the on-spot price has
-the same proportions as the on-demand price we could present the answer for 0.63$ and 1.86$ for on-demand.
+the same proportions as the on-demand price for `c4.8xlarge`, we could present the answer for 0.63$ using on-spot instances and
+1.86$ for on-demand.
 
 It would have been nice to actually test this scenario, but unfortunately we have no credits left on AWS.
 
 In our previous report we mentioned that it would be nice to give best price under 4h, 2h, 1h, 30m and 15m. Assuming
-linear scaling we can easily deduce a formula
+linear scaling, we can easily deduce a formula
 `desired_cost_$ * desired_time_s = cost_full_run_$ * full_run_time_s` so for us
 `desired_cost_$ = 216.1 / desired_time_s` assuming we could actually scale the resources in a continuous fashion,
 not discreet. Again it would have been nice to test this. The results should be:
