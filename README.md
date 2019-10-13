@@ -25,11 +25,11 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei),
   * [Memory](#memory)
   * [Kryo Serializer](#kryo-serializer)
   * [offHeap enabled](#offHeap-enabled)
-5.  [Final tests](#final-tests)
+6.  [Final tests](#final-tests)
   * [Final 20 machines cluster](#final-20-machines-cluster)
   * [Cost overview](#cost-overview)
-6.  [Best price estimation](#best-price-estimation)
-7.  [Conclusion](#conclusion)
+7.  [Best price estimation](#best-price-estimation)
+8.  [Conclusion](#conclusion)
 
 
 # Introduction
@@ -96,7 +96,8 @@ run into memory problems, our application scales linearly with the resources. On
 number of resources (core and memory) has to be allocated in order for the cluster to run (eg [YARN](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html)). This makes powerful
 machines more efficient, then the equivalent of more but smaller ones.
 
-We have also determined, by looking at the shuffle size, that the Kryo serialization decreases the overhead (smaller shuffle size when Kryo Serializer is enabled). Moreover, on the small tests the offHeap and Kryo serialization settings seem to have negligible impact on speed.
+We have also determined, by looking at the shuffle size, that the Kryo serialization decreases the overhead (smaller shuffle size when Kryo Serializer is enabled). Moreover, 
+on the small tests the offHeap and Kryo serialization settings seem to have negligible impact on speed.
 
 All tests performed on the small and medium clusters were conducted using the [RDD class](#rdd-class) implementation.
 
