@@ -65,7 +65,8 @@ Group by the day, this will bring all the data locally to an executor, making it
 Use scala lambdas afterwards to get the required results.
 
 ### RDDFast class
-Use a `mutable.HashMap` to calculate the counts and a `mutable.PriorityQueue` while storing the minimum value (in order to avoid push-pop operations) to get the top 10 results.
+Use a `mutable.HashMap` to calculate the counts and a `mutable.PriorityQueue` while storing the minimum value 
+(in order to avoid push-pop operations) to get the top 10 results.
 
 ## Dataset Implementation
 We perform filtering, grouping and counting. Afterwards we use the `Window` class to partition the results and count the top 10.
@@ -181,7 +182,7 @@ The results using a 20 `c4.8xlarge` instances AWS cluster are displayed bellow.
 | 10         | **DatasetWindowFast** with 2 executors per node, 17 cores and 16GB memory per executor, KryoSerializer and offHeap of 16GB   | 372.11s |
 | 11         | **DatasetWindowFast** with 3 executors per node, 11 cores and 12GB memory per executor, KryoSerializer and offHeap of 16GB   | 355.56s |
 | 12         | **DatasetWindowFast** with 5 executors per node, 7 cores and 8GB memory per executor, KryoSerializer and offHeap of 16GB     | **341.14s** |
-| 13         | **DatasetWindowFast** with 7 executors per node, 5 cores and 6GB memory per executor, KryoSerializer and offHeap of 16GB   | 376.01s |
+| 13         | **DatasetWindowFast** with 7 executors per node, 5 cores and 6GB memory per executor, KryoSerializer and offHeap of 16GB     | 376.01s |
 | 14         | **DatasetWindowFast** with 7 executors per node, 5 cores and 5.7GB memory per executor, KryoSerializer and offHeap of 16GB   | 343.04s |
 
 ***Table 3*** - Running results on 20 `c4.8xlarge` (36vCore, 60GB) AWS instances
@@ -247,19 +248,19 @@ This script has preloaded the Amazon on-demand prices and after taking into acco
 executors that fit inside a node) and sorts them in ascending order. We calculated the results for the 5 and 7 core executors.
 On both, the `c4.8xlarge` is registered only at position 11. Here are the top-11 for 5 and 7 core executors:
 
-| 5-core executor      | 7-core executor     |
-|--------------|--------------|
-| a1.4xlarge   | a1.4xlarge   |
-| a1.metal     | a1.metal     |
-| a1.2xlarge   | a1.2xlarge   |
-| c5.24xlarge  | t3a.2xlarge  |
-| c5.metal     | m5a.16xlarge |
-| m5a.24xlarge | c5.18xlarge  |
-| c5.18xlarge  | c5.9xlarge   |
-| c5.9xlarge   | c5.24xlarge  |
-| c5.12xlarge  | c5.metal     |
-| c5.4xlarge   | m5a.24xlarge |
-| c4.8xlarge   | c4.8xlarge   |
+| 5-core executor | 7-core executor |
+|-----------------|-----------------|
+| a1.4xlarge      | a1.4xlarge      |
+| a1.metal        | a1.metal        |
+| a1.2xlarge      | a1.2xlarge      |
+| c5.24xlarge     | t3a.2xlarge     |
+| c5.metal        | m5a.16xlarge    |
+| m5a.24xlarge    | c5.18xlarge     |
+| c5.18xlarge     | c5.9xlarge      |
+| c5.9xlarge      | c5.24xlarge     |
+| c5.12xlarge     | c5.metal        |
+| c5.4xlarge      | m5a.24xlarge    |
+| c4.8xlarge      | c4.8xlarge      |
 
 ***Table 6*** - Best AWS instances money-wise for 5-CPU and 7-CPU executors
 
