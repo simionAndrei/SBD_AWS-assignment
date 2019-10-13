@@ -268,11 +268,13 @@ linear scaling we can easily deduce a formula
 `desired_cost_$ = 216.1 / desired_time_s` assuming we could actually scale the resources in a continuous fashion,
 not distributed. Again it would have been nice to test this. The results should be:
 
-4h 0.015
-2h 0.03
-1h 0.06
-30m 0.12
-15m 0.24
+| Finish in under | Cost (on-spot) |
+|-----------------|----------------|
+| 4h              | 0.015          |
+| 2h              | 0.03           |
+| 1h              | 0.06           |
+| 30m             | 0.12           |
+| 15m             | 0.24           |
 
 # Conclusion
 In conclusion the fastest way to solve this problem is by using a DataSet implementation, taking advantage of the features
