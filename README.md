@@ -162,6 +162,11 @@ to consume more memory and save time on GC cycles.
 
 ## Final 20 machines cluster
 
+For obtaining our final results when running on the full data, we conducted 14 experimental runs using different
+implementations (as described in [Solution details](#solution_details) and spark running configurations
+(as explained in [Running with customized configurations](#running-with-customized-configurations)).
+The results using a 20 c4.8xlarge instances AWS cluster are displayed bellow.
+
 | Running ID | Description                                                                                                                  | Time    |
 |------------|------------------------------------------------------------------------------------------------------------------------------|---------|
 | 1          | **DataSetWindow** with 1 executor per node, 34 cores and 16GB memory per executor                                            | 403.11s |
@@ -181,17 +186,19 @@ to consume more memory and save time on GC cycles.
 
 ***Table 3*** - Running results on 20c4.8xlarge (36vCore, 60GB) AWS instances
 
+Bellow a couple of print-screens are shown from the Web Interfaces used to monitor the running of our final experiments.
+
 ![Spark-hist](figures/final_run_sparkh.png)
 
-***Figure 4*** - Spark History Server for running ID 12 from _Table 2_
+***Figure 4*** - Spark History Server for the best run (with ID 12) from _Table 2_
 
 ![Resource-man](figures/final_run_time.png)
 
-***Figure 5*** -Application output for running ID 12 from _Table 2_
+***Figure 5*** -Application output for the best run (with ID 12) from _Table 2_
 
 ![Ganglia](figures/final_run_ganglia.png)
 
-***Figure 6*** - Ganglia for the final running tests
+***Figure 6*** - Ganglia for the final run tests
 
 ## Cost overview
 
