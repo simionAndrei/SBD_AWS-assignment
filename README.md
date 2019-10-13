@@ -175,7 +175,7 @@ to consume more memory and save time on GC cycles.
 | 9          | **DatasetWindowFast** with 1 executor per node, 34 cores and 16GB memory per executor, KryoSerializer and offHeap of 16GB    | 381.16s |
 | 10         | **DatasetWindowFast** with 2 executors per node, 17 cores and 16GB memory per executor, KryoSerializer and offHeap of 16GB   | 372.11s |
 | 11         | **DatasetWindowFast** with 3 executors per node, 11 cores and 12GB memory per executor, KryoSerializer and offHeap of 16GB   | 355.56s |
-| 12         | **DatasetWindowFast** with 5 executors per node, 7 cores and 8GB memory per executor, KryoSerializer and offHeap of 16GB     | 341.14s |
+| 12         | **DatasetWindowFast** with 5 executors per node, 7 cores and 8GB memory per executor, KryoSerializer and offHeap of 16GB     | **341.14s** |
 | 13         | **DatasetWindowFast** with 7 executors per node, 5 cores and 6GB memory per executor, KryoSerializer and offHeap of 16GB   | 376.01s |
 | 14         | **DatasetWindowFast** with 7 executors per node, 5 cores and 5.7GB memory per executor, KryoSerializer and offHeap of 16GB   | 343.04s |
 
@@ -216,6 +216,8 @@ to consume more memory and save time on GC cycles.
 | 10         | 1.064$        | 3.141$          |
 | 11         | 1.017$        | 3.001$          |
 | 12         | 0.976$        | 2.878$          |
+| 13         | 1.075$        | 3.173$          |  
+| 14         | 0.981$        | 2.894$          |
 
 ***Table 5*** - Cost overview for the final tests
 
@@ -251,7 +253,7 @@ On both the `c4.8xlarge` registered only at position
 Take into account that this is an estimation and does not take in account the differences between the CPU types, network
 bottlenecks and other such factors.
 
-Be comparing the top 1, `a1.4xlarge`(16 vCPU, 32GB, 0.408$/h, 0.204$/7group/H) with our cluster of 
+Be comparing the top 1, `a1.4xlarge`(16 vCPU, 32GB, 0.408$/h, 0.204$/7group/H) with our cluster of
 `c4.8xlarge`(36 vCPU, 60GB, 1.591, 0.3182$/7group/H) we notice that the first is 4 times cheaper per hour while providing
 almost half the performance. Even if we take the 7 group(which has a big disadvantage for `a1.4xlarge` because you
 leave a core unused) it is still 40% cheaper. It is our belief that replacing the workers with `a1.4xlarge` will
