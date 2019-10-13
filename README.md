@@ -283,7 +283,7 @@ not distributed. Again it would have been nice to test this. The results should 
 
 | Finish in under | Cost (estimated on-spot) |
 |-----------------|--------------------------|
-| 4h              | 0.015                    |
+| 4h              | 0.015$                   |
 | 2h              | 0.03$                    |
 | 1h              | 0.06$                    |
 | 30m             | 0.12$                    |
